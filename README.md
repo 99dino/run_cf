@@ -20,3 +20,5 @@ pip3 install requests
 ```
 
 ## Steps to setup
+
+1. Download this repository and put it somewhere in your PC(remember the path)
