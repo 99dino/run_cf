@@ -49,8 +49,6 @@ echo "$contestId $1 $i" | python "path/codeforceParser.py"
    run.sh A
    ```
 
-```
-
 (to run the script file for A.cpp or A.py or A.java)
 
 ```
@@ -60,4 +58,3 @@ run.sh B
 ```
 
 (to run the script file for B.cpp or B.py or B.java)
-```
