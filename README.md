@@ -2,14 +2,19 @@
 
 ## Requirements
 
-Requires **request** and **bs4** library
-Run the following commands in command line
+Requires **request** and **bs4** library.
+Run the following commands in the terminal :
+
+**for windows**
 
 ```
 pip install bs4
 pip install requests
 ```
 
-#### Note
+**for linux/unix**
 
-_pip3_ for linux/unix user
+```
+pip3 install bs4
+pip3 install requests
+```
