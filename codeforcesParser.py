@@ -3,10 +3,8 @@ from bs4 import BeautifulSoup
 
 
 def addToTempFile(content):
-    # temporary file is output.txt
-    # which can be later used to store
-    # the actual output of the source
-    # code for the particular problem
+    # temporary file is output.txt which can be later used to store
+    # the actual output of the source code for the particular problem
     output = open('output.txt', 'w')
     if content.find("div"):
         div_text = content.find_all("div")
@@ -30,13 +28,15 @@ def formatContent(file):
 def main():
     inf = input()
     inf = inf.split(" ")
-    # input contains the ContestId and a,b,c,d... kind of problem number
+    # input contains the ContestId and a,b,c,d... problem number with same file name
+
     # URL template
     url = "https://codeforces.com/contest/ID/problem/N"
     # making a legit url of a specific problem page of codeforces
+    # like in folder name 1846 and source code a.cpp
+    # then problem page will be contestId 1846 and problem A
     url = url.replace('ID', inf[0])
     url = url.replace('N', inf[1].upper())
-
 
     # parsing starts from here
     response = requests.get(url)
@@ -65,6 +65,9 @@ def main():
         outFile = open('outputCodeforces.txt', 'w')
         formatContent(outFile)
         outFile.close()
+    
+    else:
+        print("Failed to fetch the webpage")
 
 if __name__ == "__main__":
     main()
