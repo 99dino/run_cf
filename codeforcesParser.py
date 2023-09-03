@@ -38,6 +38,9 @@ def main():
     url = url.replace('ID', inf[0])
     url = url.replace('N', inf[1].upper())
 
+    # which set of testcase is to be runned, guided by the input
+    testCase = int(inf[2])
+
     # parsing starts from here
     response = requests.get(url)
     if response.status_code == 200:
@@ -46,10 +49,15 @@ def main():
         # finding the <pre> element on codeforces problem page which contains only sample input and output correspondingly  
         pre_elements = soup.find_all("pre")
         
+
+        # in begining it will return no of set of test cases to the run.sh script file to make it work for all set of test cases automatically
+        if (testCase == 0):
+            print(len(pre_elements)//2)
+            return
         # For a set of test case there will be 2 <pre> elements, so 0th index will be the one containing input and 1st index will be having ouput of that
 
         # Input in temporary file
-        inputTestCase = pre_elements[0]
+        inputTestCase = pre_elements[2*testCase-2]
         addToTempFile(inputTestCase)
 
         # Formatting the input content
@@ -58,7 +66,7 @@ def main():
         inpFile.close()
 
         # Output in temporary file
-        outputAnswer = pre_elements[1]
+        outputAnswer = pre_elements[2*testCase-1]
         addToTempFile(outputAnswer)
 
         # Formatting the output content
