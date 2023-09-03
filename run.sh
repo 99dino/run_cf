@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# this particular script assuming the source code for the problem is written in c++ programming language, you can alter this script according to your preferred programming language ans use the executable command for those programming language where c++ code compiling and executing is done 
+
 # stored the current working directory in variable 'path'
 path=$(pwd)
 # extracted bottom most directory from path
