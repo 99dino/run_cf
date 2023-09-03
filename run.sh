@@ -9,7 +9,7 @@ path=$(pwd)
 contestId="${path##*/}"
 
 # runnning the codeforcesParser.py to parse and return the number of set of test cases
-testCase=$(echo "$contestId $1 0" | python "/path/codeforceParser.py")
+testCase=$(echo "$contestId $1 0" | python "path/codeforceParser.py")
 
 # compiled the source code
 # $1 is the argument 1, argument 0 is script name itself while executing
@@ -19,7 +19,7 @@ g++ $1.cpp -o $1
 for (( i = 1 ; i <= $testCase ; i++ ))
 do
     # making it work for ith set of testcases and store the input/output
-    echo "$contestId $1 $i" | python "/path/codeforceParser.py"
+    echo "$contestId $1 $i" | python "path/codeforceParser.py"
 
     # passed the set of input test cases to the source code while executing it with the help of pipe
     # and the storing the generated output to output.txt file
