@@ -17,3 +17,5 @@ else
     echo -e "Wrong Answer.\n"
     #cmp "$file1" "$file2"
 fi
+
+sleep 5
