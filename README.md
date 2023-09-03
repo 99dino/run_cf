@@ -45,7 +45,7 @@ echo "$contestId $1 $i" | python "path/codeforceParser.py"
 
 1. Create a directory with the name same as of ContestId.
 2. create a source code file with the name same as A,B,C,D...(like A.cpp, or B.py, or C.java).
-3. To run the script file for A.cpp or A.py or A.java
+3. To run the script file for A.cpp or A.py or A.java like source code file,
 
 ```
 run.sh A
