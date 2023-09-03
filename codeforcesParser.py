@@ -20,6 +20,13 @@ def addToTempFile(content):
     output.close()
 
 
+def formatContent(file):
+    output = open('output.txt', 'r')
+    for line in output.readlines():
+        if (len(line.strip())):
+            file.write(line)
+    output.close()
+
 def main():
     inf = input()
     inf = inf.split(" ")
@@ -45,9 +52,19 @@ def main():
         inputTestCase = pre_elements[0]
         addToTempFile(inputTestCase)
 
+        # Formatting the input content
+        inpFile = open('inputCodeforces.txt', 'w')
+        formatContent(inpFile)
+        inpFile.close()
+
         # Output in temporary file
         outputAnswer = pre_elements[1]
         addToTempFile(outputAnswer)
+
+        # Formatting the output content
+        outFile = open('outputCodeforces.txt', 'w')
+        formatContent(outFile)
+        outFile.close()
 
 if __name__ == "__main__":
     main()
