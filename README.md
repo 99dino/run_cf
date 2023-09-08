@@ -1,4 +1,8 @@
-# run_cf User Manual
+# run_cf
+
+## About
+
+This whole module extracts the input and output of test cases from codeforces problem page and provides the input the source code and the generated output is being compared to the extracted output to check whether they are same or there is some wrong answer.
 
 Note: This particular script assuming the source code for the problem is written in c++ programming language, you can alter this script according to your preferred programming language ans use the executable command for those programming language where c++ code compiling and executing is done.
 
